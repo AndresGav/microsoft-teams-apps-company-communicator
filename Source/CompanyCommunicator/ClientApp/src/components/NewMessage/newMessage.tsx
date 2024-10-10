@@ -382,7 +382,7 @@ export const NewMessage = () => {
     const sizeInBytes = 4 * Math.ceil(stringLength / 3) * 0.5624896334383812;
     const sizeInKb = sizeInBytes / 1000;
 
-    if (sizeInKb <= 1024) return true;
+    if (sizeInKb <= 15360) return true;
     else return false;
   };
 
@@ -409,7 +409,7 @@ export const NewMessage = () => {
         let resizedImageAsBase64 = fileReader.result as string;
 
         image.onload = function (e: any) {
-          const MAX_WIDTH = 1024;
+          const MAX_WIDTH = 15360;
 
           if (image.width > MAX_WIDTH) {
             const canvas = document.createElement('canvas');
